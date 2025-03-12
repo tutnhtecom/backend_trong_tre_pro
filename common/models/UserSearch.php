@@ -11,7 +11,7 @@ use common\models\User;
 /**
  * UserSearch represents the model behind the search form about `common\models\User`.
  */
-class UserSearch extends User
+class   UserSearch extends User
 {
     /**
      * @inheritdoc

@@ -1007,7 +1007,7 @@ class TeacherApiController extends CoreApiController
         if (is_null($tienDo)) {
             throw new HttpException(403, "Không xác định dữ liệu");
         }
-        if ($tienDo->giao_vien_id !== $this->uid) {
+        if ($tienDo->donDichVu->giao_vien_id !== $this->uid) {
             throw new HttpException(500, "Bạn không có quyền truy cập ca dạy này");
         }
         if ($tienDo->trang_thai !== TienDoKhoaHoc::CHUA_DAY) {
@@ -1052,7 +1052,7 @@ class TeacherApiController extends CoreApiController
         if (is_null($tienDo)) {
             throw new HttpException(403, "Không xác định dữ liệu");
         }
-        if ($tienDo->giao_vien_id !== $this->uid) {
+        if ($tienDo->donDichVu->giao_vien_id !== $this->uid) {
             throw new HttpException(500, "Bạn không có quyền truy cập ca dạy này");
         }
         if ($tienDo->trang_thai !== TienDoKhoaHoc::DANG_DAY) {
@@ -1092,7 +1092,7 @@ class TeacherApiController extends CoreApiController
         if (is_null($tienDo)) {
             throw new HttpException(403, "Không xác định dữ liệu");
         }
-        if ($tienDo->giao_vien_id !== $this->uid) {
+        if ($tienDo->donDichVu->giao_vien_id !== $this->uid) {
             throw new HttpException(500, "Bạn không có quyền truy cập ca dạy này");
         }
         if ($tienDo->trang_thai !== TienDoKhoaHoc::DA_HOAN_THANH) {
@@ -1162,7 +1162,7 @@ class TeacherApiController extends CoreApiController
         if (is_null($tienDo)) {
             throw new HttpException(403, "Không xác định dữ liệu");
         }
-        if ($tienDo->giao_vien_id !== $this->uid) {
+        if ($tienDo->donDichVu->giao_vien_id !== $this->uid) {
             throw new HttpException(500, "Bạn không có quyền truy cập ca dạy này");
         }
         if ($tienDo->trang_thai !== TienDoKhoaHoc::DA_HOAN_THANH) {

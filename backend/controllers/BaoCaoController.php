@@ -103,12 +103,11 @@ class BaoCaoController extends CoreApiController
         if ($user->vai_tro !== VaiTro::LEADER_KD) {
             $loiNhan = $loiNhan->innerJoin(DonDichVu::tableName(), DonDichVu::tableName() . '.id=' . GiaoDich::tableName() . '.don_dich_vu_id');
             $loiNhuanThangTruoc = $loiNhuanThangTruoc->innerJoin(DonDichVu::tableName(), DonDichVu::tableName() . '.id=' . GiaoDich::tableName() . '.don_dich_vu_id');
-            $loiNhan = $loiNhan->sum(DonDichVu::tableName() . '.tong_tien/' . DonDichVu::tableName() . '.so_buoi-' . GiaoDich::tableName() . '.so_tien');
-            $loiNhuanThangTruoc = $loiNhuanThangTruoc->sum(DonDichVu::tableName() . '.tong_tien/' . DonDichVu::tableName() . '.so_buoi-' . GiaoDich::tableName() . '.so_tien');
-        }else{
-            $loiNhan = 0;
-            $loiNhuanThangTruoc = 0;
         }
+        // $loiNhan = $loiNhan->sum(DonDichVu::tableName() . '.tong_tien/' . DonDichVu::tableName() . '.so_buoi-' . GiaoDich::tableName() . '.so_tien');
+        $loiNhan = 0;
+        // $loiNhuanThangTruoc = $loiNhuanThangTruoc->sum(DonDichVu::tableName() . '.tong_tien/' . DonDichVu::tableName() . '.so_buoi-' . GiaoDich::tableName() . '.so_tien');
+        $loiNhuanThangTruoc = 0;
         return $this->outputSuccess([
             'tongDoanhThu' => [
                 'tong' => $tongDoanhThuMuonLay,
